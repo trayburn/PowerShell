@@ -2,7 +2,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
     $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
     . "$here\$sut"
 
-    Describe "Exists-Item when directory exists" {
+    Describe "Test-Item" {
     		Context "when directory exists" {
     		
 	    		Setup -Dir "DirectoryThatExists"
@@ -12,7 +12,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 					$script:testN = ""
 					$script:testA = ""
 					
-	        Exists-Item $testDir `
+	        Test-Item $testDir `
 	        	-Yes { $script:testY = $_  } `
 	        	-No { $script:testN = $_ } `
 	        	-Always { $script:testA = $_ }
@@ -21,16 +21,16 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 	            $script:testY | should not benullorempty
 	        }
 	        It 'passes item as $_ to -Yes' {
-	        		$script:testY | should be $testDir
+	        	$script:testY | should be $testDir
 	        }
-	  			It "does not execute -No" {
+	  		It "does not execute -No" {
 	            $script:testN | should benullorempty
 	        }
 	        It "executes -Always" {
 	            $script:testA | should not benullorempty
 	        }
 	        It 'passes item as $_ to -Always' {
-							$script:testA | should be $testDir
+				$script:testA | should be $testDir
 	        }
         }
         
@@ -45,7 +45,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 					$script:testA = ""
 					$script:testAValue = ""
 					
-	        Exists-Item $testDir `
+	        Test-Item $testDir `
 	        	-Yes { $script:testY = $true  } `
 	        	-No { 
 	        		$script:testN = $true 
@@ -59,17 +59,17 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 	        It "does not execute -Yes" {
 	            $script:testY | should benullorempty
 	        }
-	  			It "executes -No" {
+	  		It "executes -No" {
 	            $script:testN | should be $true
 	        }
 	        It 'passes item as $_ to -No' {
-	        		$script:testNValue | should be $testDir
+	        	$script:testNValue | should be $testDir
 	        }
 	        It "executes -Always" {
 	            $script:testA | should be $true
 	        }
 	        It 'passes item as $_ to -Always' {
-							$script:testAValue | should be $testDir
+				$script:testAValue | should be $testDir
 	        }
         }
     }

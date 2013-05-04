@@ -1,4 +1,4 @@
-function Exists-Item {
+function Test-Item {
     param(
         [Parameter(Mandatory=$true, Position=1)]
         $item,

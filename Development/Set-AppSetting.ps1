@@ -23,3 +23,5 @@ function Set-AppSetting {
     }
     Set-Content -Path $Path -Value $xml.OuterXml
 }
+
+Export-ModuleMember Set-AppSetting

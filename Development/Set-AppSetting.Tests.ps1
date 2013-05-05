@@ -2,7 +2,7 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
     $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".Tests.", ".")
     . "$here\$sut"
 
-    Describe "Set-AppSetting" -tags "wip" {
+    Describe "Set-AppSetting" {
         $config = "TestDrive:\Web.config"
         $results = @{}
 
@@ -11,6 +11,10 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
             Copy-Item "$here\..\TestData\Web.config" $config
             Set-AppSetting $config "ClientValidationEnabled" 123456
             $xml = [xml] (Get-Content $config)
+
+            It "Should ident and tabify xml" {
+                (Get-Content $config | Select-String -Pattern "\t").Count | should not be 0
+            }
 
             It "Should have changed setting value" {
                 $xml.configuration.appSettings.add | ? { 

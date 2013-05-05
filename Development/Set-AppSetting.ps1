@@ -21,7 +21,18 @@ function Set-AppSetting {
     
         $xml.configuration.appSettings.AppendChild($el) | Out-Null
     }
-    Set-Content -Path $Path -Value $xml.OuterXml
+    
+    try {
+    $settings = New-Object System.Xml.XmlWriterSettings
+    $settings.Indent = $true
+    $settings.NewLineHandling = [System.Xml.NewLineHandling]::Replace
+    $settings.CloseOutput = $true
+    $settings.NewLineOnAttributes = $true
+    $settings.IndentChars = "`t"
+    $XmlWriter = [System.Xml.XmlWriter]::Create((Get-Item $Path).FullName, $settings)
+    $xml.WriteContentTo($XmlWriter) 
+    $XmlWriter.Flush() 
+    } finally { $XmlWriter.Close() }
 }
 
 Export-ModuleMember Set-AppSetting

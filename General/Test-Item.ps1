@@ -22,3 +22,5 @@ function Test-Item {
         $item | &{ PROCESS { &$Always } }
     }
 }
+
+Export-ModuleMember Set-AppSetting

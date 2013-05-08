@@ -23,4 +23,4 @@ function Test-Item {
     }
 }
 
-Export-ModuleMember Set-AppSetting
+Export-ModuleMember Test-Item

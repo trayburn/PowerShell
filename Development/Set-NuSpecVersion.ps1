@@ -8,3 +8,5 @@ function Set-NuSpecVersion {
     $xml.package.metadata.version = $Version
     $xml.Save((Get-Item $Path).FullName)
 }
+
+Export-ModuleMember Set-NuSpecVersion

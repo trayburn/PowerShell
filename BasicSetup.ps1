@@ -87,6 +87,7 @@ cinst 7zip
 cinst sysinternals
 cinst fiddler
 cinst evernote
+cinst Git-TF
 
 # Windows Features
 

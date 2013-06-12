@@ -78,9 +78,18 @@ Install-Module Psake
 cwindowsfeatures NetFx3
 
 # Chocolatey Packages
+cinst poshgit
+
+# setup GIT with my info
+git config --global user.name 'Tim Rayburn'
+git config --global user.email 'tim@timrayburn.net'
+git config --global mergetool.bc3.cmd "`'C:/Program Files (x86)/Beyond Compare 3/BComp.com`' \`"`$PWD/`$LOCAL\`" \`"`$PWD/`$REMOTE\`" \`"`$PWD/`$BASE\`" \`"`$PWD/`$MERGED\`""
+git config --global mergetool.bc3.keepBackup false
+git config --global mergetool.bc3.trustExitCode false
+
+# Now back to Chocolatey
 cinst TimRayburn.GitAliases
 cinst ruby
-cinst dropbox # Problem with running as Admin, skip for now
 cinst paint.net
 cinst beyondcompare
 cinst 7zip

@@ -72,6 +72,7 @@ Execute "(new-object Net.WebClient).DownloadString('http://psget.net/GetPsGet.ps
 Import-Module PSGet
 Install-Module Pester
 Install-Module Pscx
+Install-Module Psake
 
 # .NET Framework
 cwindowsfeatures NetFx3

@@ -14,3 +14,27 @@ Execute "(new-object Net.WebClient).DownloadString('http://psget.net/GetPsGet.ps
 
 # Get PowerShell modules
 Install-Module Pester
+Install-Module Pscx
+
+# Chocolatey Packages
+cinst TimRayburn-GitAliases
+cinst ruby
+cinst dropbox
+cinst paint.net
+cinst beyondcompare
+cinst 7zip
+cinst sysinternals
+cinst fiddler
+cinst evernote
+
+# Windows Features
+
+cWindowsFeatures IIS-WebServerRole
+cWindowsFeatures IIS-ISAPIFilter
+cWindowsFeatures IIS-ISAPIExtensions
+cWindowsFeatures IIS-NetFxExtensibility
+cWindowsFeatures IIS-ASPNET45
+cWindowsFeatures TelnetClient
+cWindowsFeatures WCF-Services45
+cWindowsFeatures WCF-TCP-PortSharing45
+cwindowsfeatures IIS-WebServerManagementTools

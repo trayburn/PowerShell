@@ -16,10 +16,13 @@ Execute "(new-object Net.WebClient).DownloadString('http://psget.net/GetPsGet.ps
 Install-Module Pester
 Install-Module Pscx
 
+# .NET Framework
+cwindowsfeatures NetFx3
+
 # Chocolatey Packages
-cinst TimRayburn-GitAliases
+cinst TimRayburn.GitAliases
 cinst ruby
-cinst dropbox
+# cinst dropbox # Problem with running as Admin, skip for now
 cinst paint.net
 cinst beyondcompare
 cinst 7zip

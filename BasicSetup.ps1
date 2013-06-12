@@ -69,6 +69,7 @@ sc Env:\Path "$(gc Env:\Path);$(gc Env:\SystemDrive)\chocolatey\bin"
 Execute "(new-object Net.WebClient).DownloadString('http://psget.net/GetPsGet.ps1') | iex"
 
 # Get PowerShell modules
+Import-Module PSGet
 Install-Module Pester
 Install-Module Pscx
 

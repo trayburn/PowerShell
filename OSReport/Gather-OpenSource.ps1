@@ -1,5 +1,5 @@
 function Get-NuGet([string] $name, [string] $ver) {
-    Invoke-RestMethod -Uri "http://nuget.org/api/v2/Packages(Id='$name',Version='$ver')" |
+    Invoke-RestMethod -Uri "http://nuget.org/api/v2/Packages(Id='$name',Version='$ver')" -ErrorAction SilentlyContinue |
         %{ $_.entry }
 }
 

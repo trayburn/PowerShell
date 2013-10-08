@@ -84,6 +84,7 @@ git config --global mergetool.bc3.trustExitCode false
 # Now back to Chocolatey
 cinst TimRayburn.GitAliases
 cinst ruby
+cinst ruby.devkit
 cinst paint.net
 cinst beyondcompare
 cinst 7zip

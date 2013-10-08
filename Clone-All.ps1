@@ -4,7 +4,7 @@ cd blog
 git clone git@github.com:trayburn/trayburn.github.com.git _deploy -b master
 cd ..
 git clone git@github.com:trayburn/ChocolateyPackages.git
-mkdir higway
+mkdir highway
 cd highway
 git clone git@github.com:HighwayFramework/Highway.Data.git data
 git clone git@github.com:HighwayFramework/Highway.Onramp.MVC.git onramp-mvc

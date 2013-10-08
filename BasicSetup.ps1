@@ -20,27 +20,21 @@ Function Test-RegistryValue
 
     process 
     {
-        if (Test-Path $Path) 
-        {
+        if (Test-Path $Path)  {
             $Key = Get-Item -LiteralPath $Path
-            if ($Key.GetValue($Name, $null) -ne $null)
-            {
-                if ($PassThru)
-                {
+            if ($Key.GetValue($Name, $null) -ne $null) {
+                if ($PassThru) {
                     Get-ItemProperty $Path $Name
                 }       
-                else
-                {
+                else {
                     $true
                 }
             }
-            else
-            {
+            else {
                 $false
             }
         }
-        else
-        {
+        else {
             $false
         }
     }
@@ -95,7 +89,8 @@ cinst beyondcompare
 cinst 7zip
 cinst sysinternals
 cinst fiddler
-cinst evernote
+# Removed because package doesn't always function.
+# cinst evernote
 cinst Git-TF
 
 # Windows Features
@@ -110,8 +105,8 @@ cWindowsFeatures WCF-Services45
 cWindowsFeatures WCF-TCP-PortSharing45
 cwindowsfeatures IIS-WebServerManagementTools
 
-# Add Visual Studio 2012
-cinst VisualStudio2012Ultimate
+# Add Visual Studio 2012 - Removed because packge does not do what you'd expect.
+# cinst VisualStudio2012Ultimate
 
 # Disable UAC & Reboot
 # Disable-UAC

@@ -82,29 +82,29 @@ git config --global mergetool.bc3.keepBackup false
 git config --global mergetool.bc3.trustExitCode false
 
 # Now back to Chocolatey
-choco install TimRayburn.GitAliases
-choco install ruby
-choco install ruby.devkit
-choco install paint.net
-choco install beyondcompare
-choco install 7zip
-choco install sysinternals
-choco install fiddler
+choco install -y TimRayburn.GitAliases
+choco install -y ruby
+choco install -y ruby.devkit
+choco install -y paint.net
+choco install -y beyondcompare
+choco install -y 7zip
+choco install -y sysinternals
+choco install -y fiddler
 # Removed because package doesn't always function.
 # cinst evernote
-choco install Git-TF
+choco install -y Git-TF
 
 # Windows Features
 
-choco WindowsFeatures IIS-WebServerRole
-choco WindowsFeatures IIS-ISAPIFilter
-choco WindowsFeatures IIS-ISAPIExtensions
-choco WindowsFeatures IIS-NetFxExtensibility
-choco WindowsFeatures IIS-ASPNET45
-choco WindowsFeatures TelnetClient
-choco WindowsFeatures WCF-Services45
-choco WindowsFeatures WCF-TCP-PortSharing45
-choco windowsfeatures IIS-WebServerManagementTools
+choco WindowsFeatures -y IIS-WebServerRole
+choco WindowsFeatures -y IIS-ISAPIFilter
+choco WindowsFeatures -y IIS-ISAPIExtensions
+choco WindowsFeatures -y IIS-NetFxExtensibility
+choco WindowsFeatures -y IIS-ASPNET45
+choco WindowsFeatures -y TelnetClient
+choco WindowsFeatures -y WCF-Services45
+choco WindowsFeatures -y WCF-TCP-PortSharing45
+choco windowsfeatures -y IIS-WebServerManagementTools
 
 # Add Visual Studio 2012 - Removed because packge does not do what you'd expect.
 # cinst VisualStudio2012Ultimate

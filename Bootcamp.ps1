@@ -1,3 +1,6 @@
+cd \
+mkdir source
+cd source
 choco install -y paint.net
 choco install -y beyondcompare
 choco install -y 7zip
